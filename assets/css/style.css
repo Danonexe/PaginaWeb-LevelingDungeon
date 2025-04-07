@@ -1,0 +1,296 @@
+/* Variables de color - Modifica estos valores para cambiar los colores en todo el sitio */
+:root {
+    /* Colores principales */
+    --primary-color: #007bff;          /* Color principal (botones, acentos) */
+    --secondary-color: #6c757d;        /* Color secundario */
+    --accent-color: #ffb570;           /* Color para destacar elementos */
+    
+    /* Colores para tarjetas y secciones */
+    --card-bg-color: #ffffff;          /* Fondo de tarjetas */
+    --section-bg-color: #f8f9fa;       /* Fondo de secciones */
+    
+    /* Colores para la barra de navegación */
+    --navbar-bg-color: #343a40;        /* Fondo de la barra de navegación */
+    --navbar-text-color: #ffffff;      /* Texto en la barra de navegación */
+    --navbar-hover-color: #f8f9fa;     /* Color al pasar sobre elementos de navegación */
+    --navbar-icon-color: #ffc107;      /* Color de los íconos en la navegación */
+    
+    /* Colores para el hero section */
+    --hero-overlay-color: rgba(0, 0, 0, 0.7);  /* Color de superposición del fondo del hero */
+    --hero-text-color: #ffffff;        /* Color del texto en el hero */
+    
+    /* Colores de tablas */
+    --table-header-bg: #343a40;        /* Fondo del encabezado de tabla */
+    --table-header-text: #ffffff;      /* Texto del encabezado de tabla */
+    --table-row-alt-bg: rgba(0, 123, 255, 0.05); /* Fondo de filas alternas */
+    
+    /* Colores para el footer */
+    --footer-bg-color: #343a40;        /* Fondo del footer */
+    --footer-text-color: #ffffff;      /* Texto del footer */
+    --footer-link-color: #ffffff;      /* Enlaces en el footer */
+    
+    /* Colores para los iconos de características */
+    --feature-icon-color: var(--accent-color); /* Color de los iconos de características */
+    
+    /* Colores para sombras */
+    --shadow-color: rgba(0, 0, 0, 0.1); 
+    --shadow-color-strong: rgba(0, 0, 0, 0.15); 
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--section-bg-color);
+}
+
+/* Personalización de la barra de navegación */
+.navbar {
+    background-color: var(--navbar-bg-color) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--navbar-text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--navbar-hover-color);
+    transform: translateY(-2px);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Sección principal de la página de inicio */
+.hero-section {
+    background: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)), url('../img/game-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--hero-text-color);
+    padding: 120px 0 !important;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+/* Tarjetas para características */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    height: 100%;
+    border: none;
+    background-color: var(--card-bg-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px var(--shadow-color-strong);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--feature-icon-color);
+}
+
+/* Iconos con colores personalizados */
+.feature-icon.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.feature-icon.text-danger {
+    color: #dc3545 !important;
+}
+
+.feature-icon.text-success {
+    color: #28a745 !important;
+}
+
+/* Tablas de ranking */
+.ranking-table th {
+    background-color: var(--table-header-bg);
+    color: var(--table-header-text);
+    border: none;
+}
+
+.ranking-table .table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--table-row-alt-bg);
+}
+
+.ranking-table {
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Página Sobre Nosotros */
+.team-img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px var(--shadow-color-strong);
+}
+
+.about-section {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Página Tecnologías */
+.tech-logo {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover .tech-logo {
+    transform: scale(1.1);
+}
+
+.tech-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--card-bg-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color-strong);
+}
+
+/* Botones personalizados */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Footer personalizado */
+footer.bg-dark {
+    background-color: var(--footer-bg-color) !important;
+    color: var(--footer-text-color);
+}
+
+footer a.text-light {
+    color: var(--footer-link-color) !important;
+    transition: opacity 0.3s ease;
+}
+
+footer a.text-light:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0 !important;
+    }
+    
+    .feature-card, .tech-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Estilos para la página de juego */
+.game-banner {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    margin-bottom: 40px;
+}
+
+.gallery-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px var(--shadow-color-strong);
+}
+
+/* Estilos para los requisitos del sistema */
+.list-group-item .badge {
+    width: 40px;
+    text-align: center;
+}
+
+/* Estilos para el logo en la barra de navegación */
+.navbar-logo {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover .navbar-logo {
+    transform: scale(1.05);
+}
+
+/* Icono de la barra de navegación */
+.navbar-icon {
+    color: var(--navbar-icon-color);
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover .navbar-icon {
+    transform: scale(1.05);
+}
+
+/* Estilos exclusivos para el logo */
+.logo-container {
+    max-width: 800px !important;
+    margin: 0 auto 40px !important;
+}
+
+.game-logo {
+    max-width: 120% !important;
+    height: auto !important;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.35)) !important;
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 32px;
+    }
+    
+    .navbar-icon {
+        font-size: 1.2rem;
+    }
+}
