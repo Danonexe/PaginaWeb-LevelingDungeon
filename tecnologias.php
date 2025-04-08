@@ -26,7 +26,7 @@ include 'includes/header.php';
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="tech-card">
-                <img src="assets/img/tech/unity.png" alt="Godot" class="tech-logo">
+                <img src="assets/img/tech/Godot.png" alt="Godot" class="tech-logo">
                 <h4>Godot</h4>
                 <p>Motor principal para el desarrollo del juego, permitiendo crear un videojuego mezclando C# y GDScript.</p>
             </div>
@@ -34,7 +34,7 @@ include 'includes/header.php';
         
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="tech-card">
-                <img src="assets/img/tech/csharp.png" alt="C#" class="tech-logo">
+                <img src="assets/img/tech/cSharp.png" alt="C#" class="tech-logo">
                 <h4>C#</h4>
                 <p>Lenguaje de programación utilizado para implementar toda la lógica del juego.</p>
             </div>
@@ -50,7 +50,7 @@ include 'includes/header.php';
         
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="tech-card">
-                <img src="assets/img/tech/itch.png" alt="itch.io" class="tech-logo">
+                <img src="assets/img/tech/ichio.png" alt="itch.io" class="tech-logo">
                 <h4>itch.io</h4>
                 <p>De aquí he sacado los elementos visuales del juego.</p>
             </div>
@@ -72,7 +72,7 @@ include 'includes/header.php';
         
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="tech-card">
-                <img src="assets/img/tech/mongodb.png" alt="MongoDB" class="tech-logo">
+                <img src="assets/img/tech/mongo.png" alt="MongoDB" class="tech-logo">
                 <h4>MongoDB Atlas</h4>
                 <p>Base de datos NoSQL en la nube para almacenar todos los datos de rankings y perfiles.</p>
             </div>
@@ -80,7 +80,7 @@ include 'includes/header.php';
         
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="tech-card">
-                <img src="assets/img/tech/Docker.png" alt="Docker" class="tech-logo">
+                <img src="assets/img/tech/docker.png" alt="Docker" class="tech-logo">
                 <h4>Docker</h4>
                 <p>Descripción de Docker.</p>
             </div>
@@ -88,7 +88,7 @@ include 'includes/header.php';
         
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="tech-card">
-                <img src="assets/img/tech/aws.png" alt="Render" class="tech-logo">
+                <img src="assets/img/tech/render.png" alt="Render" class="tech-logo">
                 <h4>Render</h4>
                 <p>Plataforma en la nube para alojar nuestra web y servicios backend.</p>
             </div>
@@ -118,17 +118,16 @@ include 'includes/header.php';
         
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="tech-card">
-                <img src="assets/img/tech/bootstrap.png" alt="Bootstrap" class="tech-logo">
-                <h4>Bootstrap</h4>
-                <p>Framework CSS para crear diseños responsive y modernos.</p>
-            </div>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="tech-card">
                 <img src="assets/img/tech/javascript.png" alt="JavaScript" class="tech-logo">
                 <h4>JavaScript</h4>
                 <p>Lenguaje de programación para la interactividad en el navegador.</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="tech-card">
+                <img src="assets/img/tech/boostrap.png" alt="Bootstrap" class="tech-logo">
+                <h4>Bootstrap</h4>
+                <p>Framework CSS para crear diseños responsive y modernos.</p>
             </div>
         </div>
     </div>
