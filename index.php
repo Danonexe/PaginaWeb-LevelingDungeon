@@ -135,7 +135,7 @@ $pageTitle = "Inicio";
 </section>
 
 <!-- Llamada a la acción -->
-<section class="mt-5 bg-primary text-white p-5 rounded">
+<section class="mt-5 bg-primary-dark text-white p-5 rounded">
     <div class="container text-center">
         <h2 class="mb-4">¿Listo para el desafío?</h2>
         <p class="lead mb-4">Descarga ahora el Leveling Dungeon y compite por el primer puesto en nuestro ranking mundial.</p>

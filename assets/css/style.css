@@ -1,7 +1,9 @@
 /* Variables de color - Modifica estos valores para cambiar los colores en todo el sitio */
 :root {
     /* Colores principales */
-    --primary-color: #007bff;          /* Color principal (botones, acentos) */
+    --primary-color: #ffb570;          /* Color principal (botones, acentos) */
+    --primary-color-dark: #e09b58;     /* Versión más oscura para hover */
+    --tarjeta-color: #383c44;     /* Versión para la tarjeta */
     --secondary-color: #6c757d;        /* Color secundario */
     --accent-color: #ffb570;           /* Color para destacar elementos */
     
@@ -59,8 +61,12 @@ body {
     transform: translateY(-2px);
 }
 
-.navbar-dark .navbar-nav .nav-link.active {
-    color: var(--primary-color);
+/* Estilos mejorados para enlaces activos en la barra de navegación */
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .show > .nav-link,
+.navbar .nav-item .nav-link.active {
+    color: #ffb570 !important;
+    color: var(--primary-color) !important;
 }
 
 .navbar-brand {
@@ -111,6 +117,51 @@ body {
 
 .feature-icon.text-success {
     color: #28a745 !important;
+}
+
+/* Botones personalizados - versión mejorada */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active {
+    background-color: var(--primary-color-dark) !important;
+    border-color: var(--primary-color-dark) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+/* También modificamos el botón outline-light */
+.btn-outline-light:hover,
+.btn-outline-light:focus,
+.btn-outline-light:active {
+    color: var(--navbar-bg-color) !important;
+    background-color: #f8f9fa !important;
+    border-color: #f8f9fa !important;
+}
+
+/* Y el botón light */
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+    background-color: #e2e6ea !important;
+    border-color: #dae0e5 !important;
 }
 
 /* Tablas de ranking */
@@ -169,22 +220,6 @@ body {
 .tech-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px var(--shadow-color-strong);
-}
-
-/* Botones personalizados */
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-outline-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
 }
 
 /* Footer personalizado */
@@ -293,4 +328,8 @@ footer a.text-light:hover {
     .navbar-icon {
         font-size: 1.2rem;
     }
+}
+/* Fondo para la sección de llamada a la acción */
+.bg-primary-dark {
+    background-color: var(--tarjeta-color) !important;
 }

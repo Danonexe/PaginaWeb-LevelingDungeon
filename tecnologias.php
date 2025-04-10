@@ -1,3 +1,4 @@
+
 <?php
 // Establecer variables para la cabecera
 $pageTitle = "Tecnologías";
@@ -52,7 +53,7 @@ include 'includes/header.php';
             <div class="tech-card">
                 <img src="assets/img/tech/ichio.png" alt="itch.io" class="tech-logo">
                 <h4>itch.io</h4>
-                <p>De aquí he sacado los elementos visuales del juego.</p>
+                <p>Plataforma para obtener recursos gráficos y assets de calidad que dan vida visual al juego.</p>
             </div>
         </div>
     </div>
@@ -66,7 +67,7 @@ include 'includes/header.php';
             <div class="tech-card">
                 <img src="assets/img/tech/php.png" alt="PHP" class="tech-logo">
                 <h4>PHP</h4>
-                <p>Lenguaje de programación del lado del servidor para esta web y la API del juego.</p>
+                <p>Lenguaje de programación del lado del servidor para esta web.</p>
             </div>
         </div>
         
@@ -74,7 +75,7 @@ include 'includes/header.php';
             <div class="tech-card">
                 <img src="assets/img/tech/mongo.png" alt="MongoDB" class="tech-logo">
                 <h4>MongoDB Atlas</h4>
-                <p>Base de datos NoSQL en la nube para almacenar todos los datos de rankings y perfiles.</p>
+                <p>Base de datos NoSQL en la nube para almacenar todos los datos de rankings.</p>
             </div>
         </div>
         
@@ -82,7 +83,7 @@ include 'includes/header.php';
             <div class="tech-card">
                 <img src="assets/img/tech/docker.png" alt="Docker" class="tech-logo">
                 <h4>Docker</h4>
-                <p>Descripción de Docker.</p>
+                <p>Contenedores que asegura el funcionamiento consistente de la aplicación en cualquier entorno de despliegue.</p>
             </div>
         </div>
         
@@ -90,7 +91,7 @@ include 'includes/header.php';
             <div class="tech-card">
                 <img src="assets/img/tech/render.png" alt="Render" class="tech-logo">
                 <h4>Render</h4>
-                <p>Plataforma en la nube para alojar nuestra web y servicios backend.</p>
+                <p>Plataforma en la nube para alojar nuestra web, nuestra API y servicios backend.</p>
             </div>
         </div>
     </div>
