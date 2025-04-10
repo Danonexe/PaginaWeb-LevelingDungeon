@@ -12,7 +12,7 @@ include 'includes/header.php';
 <section class="game-banner mb-5">
     <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
-            <img src="assets/img/game-screenshot.jpg" alt="Leveling Dungeon Screenshot" class="img-fluid rounded shadow">
+            <img src="assets/img/juego2.gif" alt="Leveling Dungeon Screenshot" class="img-fluid rounded shadow">
         </div>
         <div class="col-lg-6">
             <h2 class="mb-3">Sobre el juego</h2>
@@ -48,8 +48,8 @@ include 'includes/header.php';
             <div class="card h-100 feature-card">
                 <div class="card-body text-center">
                     <i class="fas fa-dice-d20 feature-icon"></i>
-                    <h3 class="card-title h5">Niveles ***</h3>
-                    <p class="card-text">La mazmorra marmorra ha sido especificamente diseñada para ofrecer una experiencia única.</p>
+                    <h3 class="card-title h5">Niveles únicos</h3>
+                    <p class="card-text">La mazmorra ha sido cuidadosamente diseñada con múltiples rutas y desafíos que te pondrán a prueba en cada recorrido.</p>
                 </div>
             </div>
         </div>
