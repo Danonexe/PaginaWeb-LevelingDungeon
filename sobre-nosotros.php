@@ -22,7 +22,7 @@ include 'includes/header.php';
                 <a href="#" class="btn btn-primary me-2">
                     <i class="fas fa-envelope me-2"></i>Contactar
                 </a>
-                <a href="#" class="btn btn-outline-primary">
+                <a href="https://github.com/Danonexe" class="btn btn-outline-primary" target="_blank">
                     <i class="fab fa-github me-2"></i>GitHub
                 </a>
             </div>
