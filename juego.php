@@ -19,7 +19,7 @@ include 'includes/header.php';
             <p class="lead">Leveling Dungeon es un juego de acción y aventura donde cada segundo cuenta en tu carrera por escapar de una mazmorra llena de peligros.</p>
             <p>Tu objetivo es simple: escapa lo más rápido posible y con la mayor puntuación. Cada nivel superado aumenta tus habilidades, pero también los desafíos que enfrentarás.</p>
             <div class="mt-4">
-                <a href="#" class="btn btn-primary me-2">
+                <a href="assets/game/LevelingDungeon.zip" class="btn btn-primary me-2" download="LevelingDungeon.zip" >
                     <i class="fas fa-download me-2"></i>Descargar Juego
                 </a>
                 <a href="#requisitos" class="btn btn-outline-dark">
@@ -59,7 +59,7 @@ include 'includes/header.php';
                 <div class="card-body text-center">
                     <i class="fas fa-level-up-alt feature-icon"></i>
                     <h3 class="card-title h5">Sistema de progresión</h3>
-                    <p class="card-text">Sube de nivel y desbloquea nuevos habilidades mientras avanzas por la mazmorra.</p>
+                    <p class="card-text">Sube de nivel y desbloquea nuevas habilidades mientras avanzas por la mazmorra.</p>
                 </div>
             </div>
         </div>
