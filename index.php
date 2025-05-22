@@ -77,12 +77,20 @@ $pageTitle = "Inicio";
         if (!$dbConnected) {
             echo '<div class="alert alert-danger" role="alert">
                     <i class="fas fa-exclamation-triangle me-2"></i>
-                    No se pudo conectar a la base de datos: ' . htmlspecialchars($dbError) . '
+                    No se pudo conectar a la base de datos. Por favor, inténtelo más tarde.
                   </div>';
         } else {
             try {
-                // Obtener solo los 5 mejores tiempos usando la función de la API
-                $rankings = findRankings(5, 'time', 1);
+                // Obtener solo los 5 mejores tiempos
+                $cursor = $collection->find(
+                    [], 
+                    [
+                        'sort' => ['time' => 1], // Ordenar por tiempo ascendente (menor es mejor)
+                        'limit' => 5
+                    ]
+                );
+                
+                $rankings = $cursor->toArray();
                 
                 if (count($rankings) > 0) {
                     echo '<div class="table-responsive">
@@ -101,10 +109,10 @@ $pageTitle = "Inicio";
                     foreach ($rankings as $index => $ranking) {
                         echo '<tr>
                                 <td>' . ($index + 1) . '</td>
-                                <td>' . htmlspecialchars($ranking['nick']) . '</td>
-                                <td>' . htmlspecialchars($ranking['score']) . '</td>
-                                <td>' . htmlspecialchars($ranking['time']) . ' seg</td>
-                                <td>' . htmlspecialchars($ranking['date']) . '</td>
+                                <td>' . htmlspecialchars($ranking->nick) . '</td>
+                                <td>' . htmlspecialchars($ranking->score) . '</td>
+                                <td>' . htmlspecialchars($ranking->time) . ' seg</td>
+                                <td>' . htmlspecialchars($ranking->date) . '</td>
                               </tr>';
                     }
                     
@@ -118,7 +126,7 @@ $pageTitle = "Inicio";
             } catch (Exception $e) {
                 echo '<div class="alert alert-danger" role="alert">
                         <i class="fas fa-exclamation-triangle me-2"></i>
-                        Error al obtener rankings: ' . htmlspecialchars($e->getMessage()) . '
+                        Error al obtener rankings: ' . $e->getMessage() . '
                       </div>';
             }
         }
