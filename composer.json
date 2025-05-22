@@ -1,0 +1,16 @@
+{
+    "name": "pagina-web/leveling-dungeon",
+    "description": "Página web para mostrar rankings del juego",
+    "type": "project",
+    "require": {
+      "php": "^7.4 || ^8.0",
+      "mongodb/mongodb": "^1.12",
+      "ext-mongodb": "*",
+      "vlucas/phpdotenv": "^5.3"
+    },
+    "autoload": {
+      "psr-4": {
+        "App\\": "src/"
+      }
+    }
+  }
