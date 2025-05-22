@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     pkg-config \
     libssl-dev \
-    zlib1g-dev
+    zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Instalar extensión MongoDB
 RUN pecl install mongodb \
@@ -26,8 +27,9 @@ WORKDIR /var/www/html
 # Copiar archivos del proyecto
 COPY . .
 
-# Instalar dependencias con Composer
-RUN composer install --no-interaction
+# Permitir que Composer se ejecute como root y ignorar conflictos de plataforma
+ENV COMPOSER_ALLOW_SUPERUSER=1
+RUN composer install --no-interaction --ignore-platform-req=ext-mongodb
 
 # Configurar permisos
 RUN chown -R www-data:www-data /var/www/html
