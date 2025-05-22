@@ -1,7 +1,6 @@
 <?php
 // Establecer título de la página
 $pageTitle = "Inicio";
-// No incluimos header aquí para poder mostrar el hero section antes
 ?>
 
 <?php include 'includes/header.php'; ?>
@@ -77,20 +76,12 @@ $pageTitle = "Inicio";
         if (!$dbConnected) {
             echo '<div class="alert alert-danger" role="alert">
                     <i class="fas fa-exclamation-triangle me-2"></i>
-                    No se pudo conectar a la base de datos. Por favor, inténtelo más tarde.
+                    No se pudo conectar a la base de datos. Error: ' . htmlspecialchars($dbError) . '
                   </div>';
         } else {
             try {
                 // Obtener solo los 5 mejores tiempos
-                $cursor = $collection->find(
-                    [], 
-                    [
-                        'sort' => ['time' => 1], // Ordenar por tiempo ascendente (menor es mejor)
-                        'limit' => 5
-                    ]
-                );
-                
-                $rankings = $cursor->toArray();
+                $rankings = getRankings($manager, $dbName, $collectionName, 5, 'time', 1);
                 
                 if (count($rankings) > 0) {
                     echo '<div class="table-responsive">
@@ -126,7 +117,7 @@ $pageTitle = "Inicio";
             } catch (Exception $e) {
                 echo '<div class="alert alert-danger" role="alert">
                         <i class="fas fa-exclamation-triangle me-2"></i>
-                        Error al obtener rankings: ' . $e->getMessage() . '
+                        Error al obtener rankings: ' . htmlspecialchars($e->getMessage()) . '
                       </div>';
             }
         }

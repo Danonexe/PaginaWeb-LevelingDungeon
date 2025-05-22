@@ -23,7 +23,7 @@ require_once 'includes/db-connect.php';
     </div>
 </section>
 
-<!-- Filtros (opcional) -->
+<!-- Filtros -->
 <section class="mb-4">
     <div class="card">
         <div class="card-body">
@@ -61,16 +61,14 @@ require_once 'includes/db-connect.php';
     if (!$dbConnected) {
         echo '<div class="alert alert-danger" role="alert">
                 <i class="fas fa-exclamation-triangle me-2"></i>
-                No se pudo conectar a la base de datos. Por favor, inténtelo más tarde.
+                No se pudo conectar a la base de datos. Error: ' . htmlspecialchars($dbError) . '
               </div>';
     } else {
         try {
-            // Preparar los filtros de búsqueda
+            // Preparar filtros de búsqueda
             $filter = [];
             if (isset($_GET['search']) && !empty($_GET['search'])) {
-                $search = $_GET['search'];
-                // Búsqueda por nombre de jugador (usando expresión regular para hacer búsqueda parcial)
-                $filter['nick'] = ['$regex' => $search, '$options' => 'i'];
+                $filter['search'] = $_GET['search'];
             }
             
             // Determinar el campo de ordenación
@@ -93,26 +91,20 @@ require_once 'includes/db-connect.php';
                 }
             }
             
-            // Obtener los rankings con paginación
+            // Configurar paginación
             $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
             $limit = 10; // Número de resultados por página
             $skip = ($page - 1) * $limit;
             
-            // Contar el total de registros para la paginación
-            $totalRecords = $collection->countDocuments($filter);
+            // Contar el total de registros
+            $totalRecords = countDocuments($manager, $dbName, $collectionName, $filter);
             $totalPages = ceil($totalRecords / $limit);
             
-            // Obtener los registros para esta página
-            $cursor = $collection->find(
-                $filter, 
-                [
-                    'sort' => [$sortField => $sortOrder],
-                    'skip' => $skip,
-                    'limit' => $limit
-                ]
-            );
+            // Añadir skip al filtro
+            $filter['skip'] = $skip;
             
-            $rankings = $cursor->toArray();
+            // Obtener rankings
+            $rankings = getRankings($manager, $dbName, $collectionName, $limit, $sortField, $sortOrder, $filter);
             
             if (count($rankings) > 0) {
                 echo '<div class="table-responsive">
@@ -189,7 +181,7 @@ require_once 'includes/db-connect.php';
         } catch (Exception $e) {
             echo '<div class="alert alert-danger" role="alert">
                     <i class="fas fa-exclamation-triangle me-2"></i>
-                    Error al obtener rankings: ' . $e->getMessage() . '
+                    Error al obtener rankings: ' . htmlspecialchars($e->getMessage()) . '
                   </div>';
         }
     }
