@@ -61,15 +61,15 @@ require_once 'includes/db-connect.php';
     if (!$dbConnected) {
         echo '<div class="alert alert-danger" role="alert">
                 <i class="fas fa-exclamation-triangle me-2"></i>
-                No se pudo conectar a la base de datos. Por favor, inténtelo más tarde.
+                No se pudo conectar a la base de datos: ' . htmlspecialchars($dbError) . '
               </div>';
     } else {
         try {
-            // Preparar los filtros de búsqueda
+            // Preparar filtros de búsqueda
             $filter = [];
             if (isset($_GET['search']) && !empty($_GET['search'])) {
                 $search = $_GET['search'];
-                // Búsqueda por nombre de jugador (usando expresión regular para hacer búsqueda parcial)
+                // Para API REST, usamos un filtro de búsqueda regex
                 $filter['nick'] = ['$regex' => $search, '$options' => 'i'];
             }
             
@@ -93,26 +93,17 @@ require_once 'includes/db-connect.php';
                 }
             }
             
-            // Obtener los rankings con paginación
+            // Configurar paginación
             $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
             $limit = 10; // Número de resultados por página
             $skip = ($page - 1) * $limit;
             
-            // Contar el total de registros para la paginación
-            $totalRecords = $collection->countDocuments($filter);
+            // Contar el total de registros
+            $totalRecords = countRankings($filter);
             $totalPages = ceil($totalRecords / $limit);
             
-            // Obtener los registros para esta página
-            $cursor = $collection->find(
-                $filter, 
-                [
-                    'sort' => [$sortField => $sortOrder],
-                    'skip' => $skip,
-                    'limit' => $limit
-                ]
-            );
-            
-            $rankings = $cursor->toArray();
+            // Obtener rankings con filtros y paginación
+            $rankings = findRankingsWithFilter($filter, $sortField, $sortOrder, $limit, $skip);
             
             if (count($rankings) > 0) {
                 echo '<div class="table-responsive">
@@ -132,10 +123,10 @@ require_once 'includes/db-connect.php';
                     $position = $skip + $index + 1;
                     echo '<tr>
                             <td>' . $position . '</td>
-                            <td>' . htmlspecialchars($ranking->nick) . '</td>
-                            <td>' . htmlspecialchars($ranking->score) . '</td>
-                            <td>' . htmlspecialchars($ranking->time) . ' seg</td>
-                            <td>' . htmlspecialchars($ranking->date) . '</td>
+                            <td>' . htmlspecialchars($ranking['nick']) . '</td>
+                            <td>' . htmlspecialchars($ranking['score']) . '</td>
+                            <td>' . htmlspecialchars($ranking['time']) . ' seg</td>
+                            <td>' . htmlspecialchars($ranking['date']) . '</td>
                           </tr>';
                 }
                 
@@ -189,7 +180,7 @@ require_once 'includes/db-connect.php';
         } catch (Exception $e) {
             echo '<div class="alert alert-danger" role="alert">
                     <i class="fas fa-exclamation-triangle me-2"></i>
-                    Error al obtener rankings: ' . $e->getMessage() . '
+                    Error al obtener rankings: ' . htmlspecialchars($e->getMessage()) . '
                   </div>';
         }
     }
