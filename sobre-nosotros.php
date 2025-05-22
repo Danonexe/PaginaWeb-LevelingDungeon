@@ -14,10 +14,10 @@ include 'includes/header.php';
             <img src="assets/img/me.png" alt="Nuestro equipo" class="team-img img-fluid">
         </div>
         <div class="col-lg-6">
-            <h2 class="mb-4">Daniel Hernández Gómez.</h2>
-            <p class="lead">Soy la única persona detrás de este proyecto, trabajando con dedicación para crear Leveling Dungeon desde cero.</p>
-            <p>Soy desarrollador de aplicaciones multiplataforma con experiencia en diferentes tecnologías y lenguajes de programación, lo que me permite abordar proyectos desde diversas perspectivas técnicas.</p>
-            <p>La idea de este proyecto surgió con el objetivo de aplicar mis conocimientos en programación multiplataforma para crear un ecosistema tecnológico completo. Quería desarrollar un proyecto integral que incluyera una aplicación de escritorio funcional, una API robusta que gestionara y almacenara datos en una base de datos, y una página web que sirviera tanto como documentación del proyecto como portal para visualizar las puntuaciones almacenadas en la base de datos.</p>
+            <h2 class="mb-4">Quienes somos.</h2>
+            <p class="lead">Ni idea que poner</p>
+            <p>Escribir algo</p>
+            <p>Tengo que ajustar el tamaño de la imagen</p>
             <div class="mt-4">
                 <a href="#" class="btn btn-primary me-2">
                     <i class="fas fa-envelope me-2"></i>Contactar
