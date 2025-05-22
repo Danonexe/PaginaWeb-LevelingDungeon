@@ -1,39 +1,35 @@
 FROM php:8.1-apache
 
-# Instalar dependencias del sistema
+# Instalar dependencias necesarias
 RUN apt-get update && apt-get install -y \
-    unzip \
-    curl \
     git \
+    unzip \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    pkg-config \
+    libssl-dev \
+    zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Instalar extensión MongoDB
+RUN pecl install mongodb \
+    && docker-php-ext-enable mongodb
+
 # Instalar Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Instalar extensión MongoDB versión compatible (1.19.3)
-RUN pecl install mongodb-1.19.3 && docker-php-ext-enable mongodb
-
-# Habilitar mod_rewrite
+# Configurar Apache
 RUN a2enmod rewrite
-
-# Configurar Composer para contenedores
-ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Establecer directorio de trabajo
 WORKDIR /var/www/html
 
-# Copiar composer.json
-COPY composer.json ./
-
-# Instalar dependencias
-RUN composer install \
-    --no-dev \
-    --no-scripts \
-    --no-interaction \
-    --optimize-autoloader
-
-# Copiar el resto de archivos
+# Copiar archivos del proyecto
 COPY . .
+
+# Permitir que Composer se ejecute como root y ignorar conflictos de plataforma
+ENV COMPOSER_ALLOW_SUPERUSER=1
+RUN composer install --no-interaction --ignore-platform-req=ext-mongodb
 
 # Configurar permisos
 RUN chown -R www-data:www-data /var/www/html
