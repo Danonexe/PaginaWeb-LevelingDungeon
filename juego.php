@@ -81,13 +81,13 @@ include 'includes/header.php';
     <h2 class="text-center mb-4">Galería</h2>
     <div class="row g-3">
         <div class="col-md-4 mb-3">
-            <img src="assets/img/game-1.jpg" alt="Gameplay 1" class="img-fluid rounded shadow gallery-img">
+            <img src="assets/img/game-1.jpg" alt="Gameplay 1" class="img-fluid rounded shadow" style="height: 250px; width: 100%; object-fit: cover;">
         </div>
         <div class="col-md-4 mb-3">
-            <img src="assets/img/game-2.jpg" alt="Gameplay 2" class="img-fluid rounded shadow gallery-img">
+            <img src="assets/img/game-2.jpg" alt="Gameplay 2" class="img-fluid rounded shadow" style="height: 250px; width: 100%; object-fit: cover;">
         </div>
         <div class="col-md-4 mb-3">
-            <img src="assets/img/game-3.jpg" alt="Gameplay 3" class="img-fluid rounded shadow gallery-img">
+            <img src="assets/img/game-3.jpg" alt="Gameplay 3" class="img-fluid rounded shadow" style="height: 250px; width: 100%; object-fit: cover;">
         </div>
     </div>
 </section>
@@ -185,11 +185,11 @@ include 'includes/header.php';
     <div class="accordion" id="accordionFAQ">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     ¿El juego es gratuito?
                 </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
                 <div class="accordion-body">
                     Sí, Leveling Dungeon es completamente gratuito para jugar. No hay compras dentro del juego ni contenido premium.
                 </div>
