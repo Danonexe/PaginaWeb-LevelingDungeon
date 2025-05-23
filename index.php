@@ -12,7 +12,7 @@ $pageTitle = "Inicio";
             <img src="assets/img/logoJuego2.png" alt="Leveling Dungeon" class="img-fluid game-logo">
         </div>
         <p class="lead mb-5">La mazmorra te espera. Compite contra jugadores de todo el mundo y demuestra tu habilidad.</p>
-        <a href="#" class="btn btn-primary btn-lg me-3">
+        <a href="assets/downloads/LevelingDungeon.zip" download="LevelingDungeon.zip" class="btn btn-primary btn-lg me-3">
             <i class="fas fa-download me-2"></i>Descargar Juego
         </a>
         <a href="ranking.php" class="btn btn-outline-light btn-lg">
@@ -129,8 +129,8 @@ $pageTitle = "Inicio";
 <section class="mt-5 bg-primary-dark text-white p-5 rounded">
     <div class="container text-center">
         <h2 class="mb-4">¿Listo para el desafío?</h2>
-        <p class="lead mb-4">Descarga ahora el Leveling Dungeon y compite por el primer puesto en nuestro ranking mundial.</p>
-        <a href="#" class="btn btn-light btn-lg">
+        <p class="lead mb-4">Descarga ahora Leveling Dungeon y compite por el primer puesto en nuestro ranking mundial.</p>
+        <a href="assets/downloads/LevelingDungeon.zip" download="LevelingDungeon.zip" class="btn btn-light btn-lg">
             <i class="fas fa-download me-2"></i>Descargar Ahora
         </a>
     </div>
