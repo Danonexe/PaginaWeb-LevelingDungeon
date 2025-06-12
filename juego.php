@@ -92,46 +92,97 @@ include 'includes/header.php';
     </div>
 </section>
 
+
+
 <!-- Cómo jugar -->
 <section class="mb-5 bg-light p-4 rounded">
     <h2 class="text-center mb-4">Cómo jugar</h2>
-    <div class="row align-items-center">
-        <div class="col-md-6 mb-4 mb-md-0">
-            <div class="ratio ratio-16x9">
-                <!-- Puedes reemplazar esto con un iframe de YouTube con un trailer del juego -->
-                <img src="assets/img/tutorial.jpg" alt="Tutorial" class="img-fluid rounded">
-            </div>
-        </div>
-        <div class="col-md-6">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="h5 card-title">Controles básicos</h3>
-                    <ul class="list-group list-group-flush mb-3">
-                        <li class="list-group-item d-flex align-items-center">
-                            <span class="badge bg-dark me-2">W</span> 
-                            <span class="ms-2">Mover hacia arriba</span>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span class="badge bg-dark me-2">A</span> 
-                            <span class="ms-2">Mover hacia la izquierda</span>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span class="badge bg-dark me-2">S</span> 
-                            <span class="ms-2">Mover hacia abajo</span>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span class="badge bg-dark me-2">D</span> 
-                            <span class="ms-2">Mover hacia la derecha</span>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span class="badge bg-dark me-2">E</span> 
-                            <span class="ms-2">Interactuar con objetos</span>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <span class="badge bg-dark me-2">_</span> 
-                            <span class="ms-2">Atacar</span>
-                        </li>
-                    </ul>
+                    <h3 class="h4 card-title text-center mb-4">Controles básicos</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center p-3 border rounded">
+                                <span class="badge bg-dark fs-5 me-3 px-3 py-2">W</span> 
+                                <span class="fw-bold">Mover hacia arriba</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center p-3 border rounded">
+                                <span class="badge bg-dark fs-5 me-3 px-3 py-2">A</span> 
+                                <span class="fw-bold">Mover hacia la izquierda</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center p-3 border rounded">
+                                <span class="badge bg-dark fs-5 me-3 px-3 py-2">S</span> 
+                                <span class="fw-bold">Mover hacia abajo</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center p-3 border rounded">
+                                <span class="badge bg-dark fs-5 me-3 px-3 py-2">D</span> 
+                                <span class="fw-bold">Mover hacia la derecha</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center p-3 border rounded">
+                                <span class="badge bg-dark fs-5 me-3 px-3 py-2">E</span> 
+                                <span class="fw-bold">Interactuar con objetos</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center p-3 border rounded">
+                                <span class="badge bg-dark fs-5 me-3 px-3 py-2">SPACE</span> 
+                                <span class="fw-bold">Atacar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-warning bg-opacity-10 border border-warning rounded">
+                        <h5 class="text-warning mb-2">
+                            <i class="fas fa-lightbulb me-2"></i>Consejo
+                        </h5>
+                        <p class="mb-0">Mantén presionadas las teclas de movimiento para desplazarte de forma continua y fluida por la mazmorra.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Historia del juego -->
+<section class="mb-5 bg-gradient-dark py-5 rounded">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="mb-3">Historia</h2>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="mb-4 p-4 border-start border-4 border-danger bg-white bg-opacity-90 rounded">
+                    <p class="mb-0 text-dark">
+                        Eres un aventurero experimentado que, durante una exploración rutinaria, has caído accidentalmente en las profundidades de una antigua mazmorra olvidada. El suelo se desplomó bajo tus pies y ahora te encuentras atrapado en un laberinto subterráneo lleno de peligros ancestrales.
+                    </p>
+                </div>
+                
+                <div class="mb-4 p-4 border-start border-4 border-warning bg-white bg-opacity-90 rounded">
+                    <p class="mb-0 text-dark">
+                        Las paredes húmedas y los pasillos oscuros albergan criaturas hostiles que han permanecido dormidas durante siglos. Goblins, Slimes y otras abominaciones acechan en cada rincón, esperando a cualquier intruso que ose perturbar su descanso eterno.
+                    </p>
+                </div>
+                
+                <div class="mb-4 p-4 border-start border-4 border-info bg-white bg-opacity-90 rounded">
+                    <p class="mb-0 text-dark">
+                        Con cada batalla que libres y cada desafío que superes, tu experiencia aumentará y tus habilidades se fortalecerán. Deberás subir de nivel estratégicamente, mejorando tu fuerza y resistencia para enfrentar enemigos cada vez más poderosos en los niveles más profundos de la mazmorra.
+                    </p>
+                </div>
+                
+                <div class="p-4 border-start border-4 border-success bg-white bg-opacity-90 rounded">
+                    <p class="text-center mb-0 text-dark">
+                       Tu misión es clara: sobrevive, evoluciona y encuentra la salida antes de que la mazmorra te consuma para siempre.
+                    </p>
                 </div>
             </div>
         </div>
